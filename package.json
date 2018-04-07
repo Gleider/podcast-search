@@ -1,0 +1,24 @@
+{
+  "name": "podcast-plataform",
+  "version": "1.0.0",
+  "description": "Plataforma de recomendação de podcasts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gleider/podcast-plataform.git"
+  },
+  "keywords": [
+    "js",
+    "podcast",
+    "recomendation"
+  ],
+  "author": "Gleider Mackedanz <gleider.ec@gmail.com> (https://gleider.com.br/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gleider/podcast-plataform/issues"
+  },
+  "homepage": "https://github.com/Gleider/podcast-plataform#readme"
+}
