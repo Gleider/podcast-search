@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/Gleider/podcast-plataform/issues"
   },
-  "homepage": "https://github.com/Gleider/podcast-plataform#readme"
+  "homepage": "https://github.com/Gleider/podcast-plataform#readme",
+  "devDependencies": {}
 }
