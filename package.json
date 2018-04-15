@@ -38,7 +38,11 @@
     "gulp-babel": "^7.0.1",
     "husky": "^0.14.3",
     "mocha": "^5.1.0",
-    "nyc": "^11.6.0"
+    "node-fetch": "^2.1.2",
+    "nyc": "^11.6.0",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^3.0.0",
+    "sinon-stub-promise": "^4.0.0"
   },
   "dependencies": {
     "@babel/preset-env": "^7.0.0-beta.44",
