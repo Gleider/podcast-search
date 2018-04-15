@@ -1,7 +1,7 @@
 {
-  "name": "podcast-plataform",
+  "name": "podcast-search",
   "version": "1.0.0",
-  "description": "Plataforma de recomendação de podcasts",
+  "description": "API to search podcasts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
