@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint"
+    "prepush": "npm run lint",
+    "build": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gleider/podcast-plataform.git"
+    "url": "git+https://github.com/Gleider/podcast-search.git"
   },
   "keywords": [
     "js",
@@ -28,7 +29,6 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
-    "husky": "^0.14.3",
-    "webpack": "^4.5.0"
+    "husky": "^0.14.3"
   }
 }
