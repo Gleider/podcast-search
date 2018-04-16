@@ -39,9 +39,11 @@ describe('Podcast Search', () => {
   });
   describe('generic search', () => {
     let fetchedStub;
+    let promise;
 
     beforeEach(() => {
       fetchedStub = sinon.stub(global, 'fetch');
+      promise = fetchedStub.returnsPromise();
     });
 
     afterEach(() => {
@@ -77,5 +79,11 @@ describe('Podcast Search', () => {
 
       });
     });
+    it('should return the JSON data from the promise', () => {
+      promise.resolves({body: 'json'});
+      const podcast = search('nerdcast');
+
+      expect(podcast.resolveValue).to.be.eql({body: 'json'});
+    })
   });
 });
