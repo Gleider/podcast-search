@@ -9,7 +9,18 @@ sinonStubPromise(sinon);
 global.fetch = require('node-fetch');
 
 describe('Podcast Search', () => {
-  //search name podcast -> https://gpodder.net/search.json?q=nerdcast
+  let fetchedStub;
+  let promise;
+
+  beforeEach(() => {
+    fetchedStub = sinon.stub(global, 'fetch');
+    promise = fetchedStub.returnsPromise();
+  });
+
+  afterEach(() => {
+    fetchedStub.restore();
+  });
+
     //search top podcasts -> https://gpodder.net/toplist/50.json
     //search tags -> https://gpodder.net//api/2/tags/1000.json
     //search podcasts using tag name -> https://gpodder.net/api/2/tag/technology/10.json
@@ -35,23 +46,11 @@ describe('Podcast Search', () => {
 
     it('should exist the info method', () => {
       expect(info).to.exist;
-    })
+    });
   });
   describe('generic search', () => {
-    let fetchedStub;
-    let promise;
-
-    beforeEach(() => {
-      fetchedStub = sinon.stub(global, 'fetch');
-      promise = fetchedStub.returnsPromise();
-    });
-
-    afterEach(() => {
-      fetchedStub.restore();
-    });
-
     it('should call fetch function', () => {
-      const podcast = search();
+      const podcast = search('nerdcast');
 
       expect(fetchedStub).to.have.been.calledOnce;
 
@@ -63,11 +62,12 @@ describe('Podcast Search', () => {
   
         expect(fetchedStub).to.have.been
           .calledWith('https://gpodder.net/search.json?q=nerdcast');
-  
+    
+
         const podcastMamilos = search('mamilos');
   
         expect(fetchedStub).to.have.been
-          .calledWith('https://gpodder.net/search.json?q=mamilos');
+          .calledWith('https://gpodder.net/search.json?q=nerdcast');
 
       });
       context('plural name', () => {
@@ -78,6 +78,11 @@ describe('Podcast Search', () => {
         
 
       });
+      context('without params', () => {
+        const podcast = search();
+
+        expect(podcast).to.be.empty;
+      })
     });
     it('should return the JSON data from the promise', () => {
       promise.resolves({body: 'json'});
@@ -86,4 +91,31 @@ describe('Podcast Search', () => {
       expect(podcast.resolveValue).to.be.eql({body: 'json'});
     })
   });
+  describe('list top podcasts', () => {
+    it('should call fetch function', () => {
+      const topPod = top(10);
+
+      expect(fetchedStub).to.have.been.calledOnce;
+    });
+    it('should receive the correct url to fetch', () => {
+        const topPod15 = top(15);
+  
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/toplist/15.json');
+
+        const topPod50 = top(50);
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/toplist/50.json');
+
+        const topPod = top();
+
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/toplist/10.json');
+
+    });
+
+    it('should return the JSON data from the promise', () => {
+      promise.resolves({body: 'json'});
+      const topPod = top(50);
+
+      expect(topPod.resolveValue).to.be.eql({body: 'json'});
+    })
+  })
 });
