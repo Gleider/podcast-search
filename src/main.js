@@ -7,11 +7,19 @@ export const search = (podcast) => {
   return fetch(`https://gpodder.net/search.json?q=${str}`).then(data => data.json());
 };
 
-export const top = (value = 10) => fetch(`https://gpodder.net/toplist/${value}.json`).then(data => data.json());
+export const top = (value = 10) => fetch(`https://gpodder.net/toplist/${value}.json`)
+  .then(data => data.json());
 
 
-export const listTags = (value = 10) => fetch(`https://gpodder.net//api/2/tags/${value}.json`);
+export const listTags = (value = 10) => fetch(`https://gpodder.net//api/2/tags/${value}.json`)
+  .then(data => data.json());
 
-export const tagName = () => {};
+export const tagName = (tag, quant = 10) => {
+  if (tag) {
+    return fetch(`https://gpodder.net/api/2/tag/${tag}/${quant}.json`)
+      .then(data => data.json);
+  }
+  return [];
+};
 
 export const info = () => {};

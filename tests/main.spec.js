@@ -21,7 +21,6 @@ describe('Podcast Search', () => {
     fetchedStub.restore();
   });
 
-    //search tags -> https://gpodder.net//api/2/tags/1000.json
     //search podcasts using tag name -> https://gpodder.net/api/2/tag/technology/10.json
     //search info podcast with link program -> https://gpodder.net/api/2/data/podcast.json?url=http://jovemnerd.ig.com.br/categoria/nerdcast/feed/rss/
 
@@ -141,5 +140,49 @@ describe('Podcast Search', () => {
         expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/10.json')
       });
     });
+    it('should return the JSON data from the promise', () => {
+      promise.resolves({body: 'json'});
+      const tag = listTags(10);
+
+      expect(tag.resolveValue).to.be.eql({body: 'json'});
+    })
+    describe('search tag', () => {
+      it('should call fetch function', () => {
+        const tag = tagName('technology', 10);
+
+        expect(fetchedStub).to.have.been.calledOnce;
+      });
+      it('should receive the currect url to fetch', () => {
+        context('parameter without quantity', () => {
+          const tagTec = tagName('technology');
+
+          expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tag/technology/10.json');
+
+          const tagNerd = tagName('nerd');
+
+          expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tag/nerd/10.json');
+        });
+        context('parameter with quantity', () => {
+          const tagTec = tagName('technology', 15);
+
+          expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tag/technology/15.json');
+
+          const tagNerd = tagName('nerd', 100);
+
+          expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tag/nerd/100.json');
+        });
+        context('without parameters', () => {
+          const tag = tagName();
+
+          expect(tag).to.be.empty;
+        });
+      });
+      it('should return the JSON data from the promise', () => {
+        promise.resolves({body: 'json'});
+        const tag = tagName('nerd', 15);
+
+        expect(tag.resolveValue).to.be.eql({body: 'json'});
+      });
+    })
   });
 });
