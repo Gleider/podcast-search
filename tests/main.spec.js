@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import { search, top, tags, tagName, info } from '../src/main';
+import { search, top, listTags, tagName, info } from '../src/main';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 chai.use(sinonChai);
@@ -21,7 +21,6 @@ describe('Podcast Search', () => {
     fetchedStub.restore();
   });
 
-    //search top podcasts -> https://gpodder.net/toplist/50.json
     //search tags -> https://gpodder.net//api/2/tags/1000.json
     //search podcasts using tag name -> https://gpodder.net/api/2/tag/technology/10.json
     //search info podcast with link program -> https://gpodder.net/api/2/data/podcast.json?url=http://jovemnerd.ig.com.br/categoria/nerdcast/feed/rss/
@@ -37,7 +36,7 @@ describe('Podcast Search', () => {
     });
 
     it('should exist the tags method', () => {
-      expect(tags).to.exist;
+      expect(listTags).to.exist;
     });
 
     it('should exist the tagName method', () => {
@@ -67,7 +66,7 @@ describe('Podcast Search', () => {
         const podcastMamilos = search('mamilos');
   
         expect(fetchedStub).to.have.been
-          .calledWith('https://gpodder.net/search.json?q=nerdcast');
+          .calledWith('https://gpodder.net/search.json?q=mamilos');
 
       });
       context('plural name', () => {
@@ -116,6 +115,31 @@ describe('Podcast Search', () => {
       const topPod = top(50);
 
       expect(topPod.resolveValue).to.be.eql({body: 'json'});
-    })
-  })
+    });
+  });
+  describe('list tags', () => {
+    it('should call fetch function', () =>{
+      const tags = listTags(10);
+
+      expect(fetchedStub).to.have.been.calledOnce;
+    });
+    
+    it('should receive the currect url to fetch', () => {
+      context('return 15 tags', () => {
+        const tags15 = listTags(15);
+
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/15.json');
+      });
+      context('return 1000 tags', () => {
+        const tags1000 = listTags(1000);
+
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/1000.json');
+      });
+      context('without paramters', () => {
+        const tag10 = listTags();
+
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/10.json')
+      });
+    });
+  });
 });

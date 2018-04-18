@@ -10,7 +10,7 @@ export const search = (podcast) => {
 export const top = (value = 10) => fetch(`https://gpodder.net/toplist/${value}.json`).then(data => data.json());
 
 
-export const tags = () => {};
+export const listTags = (value = 10) => fetch(`https://gpodder.net//api/2/tags/${value}.json`);
 
 export const tagName = () => {};
 
