@@ -22,4 +22,10 @@ export const tagName = (tag, quant = 10) => {
   return [];
 };
 
-export const info = () => {};
+export const info = (url) => {
+  if (url) {
+    return fetch(`https://gpodder.net/api/2/data/podcast.json?url=${url}`)
+      .then(data => data.json);
+  }
+  return [];
+};
