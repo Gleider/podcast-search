@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import { search, top, listTags, tagName, info } from '../src/main';
+import { search, top, listTags, tagName, info } from '../src/search';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 chai.use(sinonChai);
