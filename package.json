@@ -4,6 +4,9 @@
   "description": "API to search podcasts",
   "main": "index.js",
   "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
@@ -38,6 +41,7 @@
     "mocha": "^5.0.0",
     "node-fetch": "^2.1.2",
     "nyc": "^11.6.0",
+    "rimraf": "^2.6.2",
     "sinon": "^4.5.0",
     "sinon-chai": "^3.0.0",
     "sinon-stub-promise": "^4.0.0",
