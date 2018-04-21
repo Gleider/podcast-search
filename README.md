@@ -1,8 +1,6 @@
 # Podcast Search API
 
-[![Build Status](https://travis-ci.org/Gleider/podcast-search.svg?branch=master)](https://travis-ci.org/Gleider/podcast-search)
-
-[![Coverage Status](https://coveralls.io/repos/github/Gleider/podcast-search/badge.svg?branch=master)](https://coveralls.io/github/Gleider/podcast-search?branch=master)
+[![Build Status](https://travis-ci.org/Gleider/podcast-search.svg?branch=master)](https://travis-ci.org/Gleider/podcast-search) [![Coverage Status](https://coveralls.io/repos/github/Gleider/podcast-search/badge.svg?branch=master)](https://coveralls.io/github/Gleider/podcast-search?branch=master)
 
 This API serves to search podcasts and informations about it.
 Uses metadata from [https://gpodder.net'](Gpoddernet).
