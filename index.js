@@ -6,7 +6,7 @@ import {
   info
 } from './src/search';
 
-export default {
+module.exports = {
   search,
   top,
   listTags,

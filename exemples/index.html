@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 <body>
   <script src="../dist/podcast-search.umd.js"></script>
+
+  <script>
+    const podcast = podcastSearch.search('nerdcast');
+    podcast.then(data => console.log(data));
+  </script>
 </body>
 </html>

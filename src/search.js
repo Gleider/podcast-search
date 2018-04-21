@@ -13,11 +13,11 @@ export const top = (value = 10) => fetch(`${API_URL}/toplist/${value}.json`)
   .then(toJSON);
 
 
-export const listTags = (value = 10) => fetch(`${API_URL}//api/2/tags/${value}.json`).then(toJSON);
+export const listTags = (value = 10) => fetch(`${API_URL}/api/2/tags/${value}.json`).then(toJSON);
 
 export const tagName = (tag, quant = 10) => {
   if (tag) {
-    return fetch(`${API_URL}/api/2/tag/${tag}/${quant}.json`).then(data => data.json);
+    return fetch(`${API_URL}/api/2/tag/${tag}/${quant}.json`).then(toJSON);
   }
   return [];
 };
