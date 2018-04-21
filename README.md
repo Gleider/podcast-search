@@ -1,4 +1,8 @@
 # Podcast Search API
+
+[![Build Status](https://travis-ci.org/Gleider/podcast-search.svg?branch=master)](https://travis-ci.org/Gleider/podcast-search)
+
+
 This API serves to search podcasts and informations about it.
 Uses metadata from [https://gpodder.net'](Gpoddernet).
 
