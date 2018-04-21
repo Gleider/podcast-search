@@ -1,5 +1,6 @@
 # Podcast Search API
-Esta API serve para buscar podcasts e seus metadados associados.
+This API serves to search podcasts and informations about it.
+Uses metadata from [https://gpodder.net'](Gpoddernet).
 
 
 

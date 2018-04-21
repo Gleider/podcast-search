@@ -127,17 +127,17 @@ describe('Podcast Search', () => {
       context('return 15 tags', () => {
         const tags15 = listTags(15);
 
-        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/15.json');
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tags/15.json');
       });
       context('return 1000 tags', () => {
         const tags1000 = listTags(1000);
 
-        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/1000.json');
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tags/1000.json');
       });
       context('without paramters', () => {
         const tag10 = listTags();
 
-        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net//api/2/tags/10.json')
+        expect(fetchedStub).to.have.been.calledWith('https://gpodder.net/api/2/tags/10.json')
       });
     });
     it('should return the JSON data from the promise', () => {
