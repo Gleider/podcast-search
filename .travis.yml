@@ -6,7 +6,7 @@ cache:
   directories:
     "node_modules"
 
-  before_script:
+before_script:
     - npm run build:all
-  after_success:
+fter_success:
     npm run test:covarege
