@@ -21,6 +21,15 @@
     "type": "git",
     "url": "git+https://github.com/Gleider/podcast-search.git"
   },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
   "keywords": [
     "js",
     "podcast",
