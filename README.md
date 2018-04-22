@@ -26,6 +26,20 @@ $ npm install podcast-search --save
 
 ### ES6
 
+```js
+//to import a specific method
+import { method } from 'podcast-search';
+
+//to import everything
+import * as podcastSearch from 'podcast-search';
+```
+
+### CommonJS
+
+```js
+var podcastSearch = require('podcast-search');
+```
+
 ## License
 
 The MIT License (MIT)
