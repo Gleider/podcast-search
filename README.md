@@ -17,6 +17,15 @@ This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API
 
 This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Gpoddernet API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to Node.
 
+## Instalation
+
+```sh
+$ npm install podcast-search --save
+```
+## How to use
+
+### ES6
+
 ## License
 
 The MIT License (MIT)
