@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Podcast Search</title>
   <style>
+   
+    body{
+      margin: 10px;
+      padding: 10px;
+      background-color: #c6c6c6;
+    }
+    #bd{
+      background-color: white;
+      height: 500px;
+    }
+    #infoSearch{
+      width: 500px;
+      margin: 0 auto;
+    }
+    #mainTitle{
+      padding-left: 100px;
+    }
     #images{
-      margin: 25px auto;
-      border: 1px solid black;
       width: 300px;
       height: 300px;
       display: none;
+      margin: 30px 20px;
+      float: left;
     }
     #imgConf{
       width: 300px;
       height: 300px;
+      
     }
     #dsplay{
       display: none;
+      width: 800px;
+      height: 500px;
+      margin: 20px auto
+      
     }
     #title{
       margin: 10px auto;
@@ -26,27 +48,36 @@
   </style>
 </head>
 <body>
-  <h1>Search podcasts</h1>
-  <label for="srch">Search</label>
-  <input type="search" id='srch'>
-  <script src="../dist/podcast-search.umd.js"></script>
-  <input type="button" value="Search" id='btn'>
-  <div id="images"></div>
-  <div id="dsplay">
-    <h2 id='title'></h2>
-    <h2 id='desc'></h2>
+  <header>
 
+  </header>
+
+  <div id="bd">
+    <div id="infoSearch">
+      <h1 id='mainTitle'>Search podcasts</h1>
+      <input type="search" id='srch' size='50' placeholder="Search your podcast">
+      <script src="../dist/podcast-search.umd.js"></script>
+      <input type="button" value="Search" id='btn'>
+    </div>
+    <div id="images"></div>
+    <div id="dsplay">
+      <h2 id='title'></h2>
+      <h3>Description</h2>
+      <p id='desc'></p>
+      <h3 id='url'></h3>
+      <h3 id='website'></h3>
+
+    </div>
   </div>
-
   <script>
-    // const podcast = podcastSearch.search('nerdcast');
-    // podcast.then(result => console.log(result));
     const $btn = document.getElementById('btn');
     const $srch = document.getElementById('srch');
     const $images = document.getElementById('images');
     const $dsplay = document.getElementById('dsplay');
     const $title = document.getElementById('title');
     const $desc = document.getElementById('desc');
+    const $url = document.getElementById('url');
+    const $website = document.getElementById('website');
 
     $btn.addEventListener('click', function(){
       let podcastName = $srch.value;
@@ -63,7 +94,11 @@
 
         $title.innerHTML = result[0].title;
         
-        $desc.innerHTML = `Description: ${result[0].description}`;
+        $desc.innerHTML = result[0].description;
+
+        $url.innerHTML = `<a href='${result[0].url}'>URL Feed</a>`;
+        
+        $website.innerHTML = `<a href='${result[0].website}'>Website</a>`
       });
     });
 
