@@ -1,0 +1,66 @@
+/* paletts
+http://www.color-hex.com/color-palette/358
+*/
+
+body{
+  margin: 10px;
+  padding: 10px;
+  background-color: #2a4d69
+}
+.menu{
+  border: 1px solid blue;
+  margin: 0 10px;
+}
+.menu:link{
+  color: black;
+  background-color: #e7eff6;
+  font-size: 20px;
+}
+.menu:visited{
+  color: black;
+  background-color: #e7eff6;
+}
+.menu:hover{
+
+}
+.menu:active{
+  
+}
+#menu{
+  border: 1px solid red;
+  padding: 10px 20px;
+}
+#bd{
+  background-color: white;
+  height: 500px;
+}
+#infoSearch{
+  width: 500px;
+  margin: 0 auto;
+}
+#mainTitle{
+  padding-left: 100px;
+}
+#images{
+  width: 300px;
+  height: 300px;
+  display: none;
+  margin: 30px 20px;
+  float: left;
+}
+#imgConf{
+  width: 300px;
+  height: 300px;
+  
+}
+#dsplay{
+  display: none;
+  width: 800px;
+  height: 500px;
+  margin: 20px auto
+  
+}
+#title{
+  margin: 10px auto;
+
+}
