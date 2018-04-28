@@ -1,7 +1,23 @@
 button{
   height: 50px;
   width: 80px;
-  border: 2px solid black;
+  border: 2px solid #2a4d69;
   margin: 10px;
   padding: 10px;
+  background-color: #e7eff6;
+}
+
+#topTitulo{
+  width: 380px;
+  margin: 0 auto;
+}
+
+#topCorpo{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.topImg{
+  width: 100px;
+  height: 100px;
 }

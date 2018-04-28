@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/search.css">
   <link rel="stylesheet" type="text/css" href="css/top.css">
+  <script src="../dist/podcast-search.umd.js"></script>
+
   <title>Top podcasts</title>
 </head>
 <body>
@@ -17,14 +19,50 @@
       <a class='menu' href="tagName.html">Search tag</a>
   </nav>
   <div id="bd">
-    <h3>Listar</h3>
-    <button>10</button>
-    <button>20</button>
-    <button>50</button>
-    <button>100</button>
-    <button>200</button>
-    <button>500</button>
-    <button>1000</button>
+    <div id="topCorpo">
+      <div id="topTitulo">
+        <h1>Listar Top Podcasts</h1>
+      </div>
+      <button id="top10">10</button>
+      <button id="top20">20</button>
+      <button id="top50">50</button>
+      <button id="top100">100</button>
+      <button id="top200">200</button>
+      <button id="top500">500</button>
+      <button id="top1000">1000</button>
+     
+    </div>
+    <div id="uList">
+      <ul>
+        <div id="listPodcast"></div>
+      </ul>
+    </div>
   </div>
+  <script>
+    
+    let $top10 = document.getElementById("top10");
+    let $top20 = document.getElementById("top20");
+    let $top50 = document.getElementById("top50");
+    let $top100 = document.getElementById("top100");
+    let $top200 = document.getElementById("top200");
+    let $top500 = document.getElementById("top500");
+    let $top1000 = document.getElementById("top1000");
+    let $list = document.getElementById("listPodcast");
+
+    function callTop(n){
+      const podcast = podcastSearch.top(n);
+      podcast.then(result => {
+        $list.innerHTML = '';
+        for(let i = 0; i < n; i++){
+          $list.innerHTML += `<li><img class="topImg" src="${result[i].logo_url}"></li>`;
+        }
+      
+      });
+      
+    }
+    $top10.addEventListener("click", () => {
+      callTop(10);
+    });
+  </script>
 </body>
 </html>
