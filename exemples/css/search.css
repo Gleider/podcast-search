@@ -35,7 +35,7 @@ body{
 }
 #bd{
   background-color: white;
-  height: 500px;
+  height: auto;
   border: 5px solid #4b86b4;
   border-radius: 20px;
 }

@@ -17,7 +17,17 @@ button{
   margin: 0 auto;
 }
 
-.topImg{
-  width: 100px;
-  height: 100px;
+.img{
+  border: 3px solid #2a4d69;
+  margin: 1px 30px;
+  width: 150px;
+  list-style: none;
+  display: inline-block;
+  padding: 5px 5px 0 5px;
+
 }
+.topImg{
+  width: 150px;
+  height: 150px;
+}
+

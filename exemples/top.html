@@ -21,7 +21,7 @@
   <div id="bd">
     <div id="topCorpo">
       <div id="topTitulo">
-        <h1>Listar Top Podcasts</h1>
+        <h1>List Top Podcasts</h1>
       </div>
       <button id="top10">10</button>
       <button id="top20">20</button>
@@ -54,7 +54,9 @@
       podcast.then(result => {
         $list.innerHTML = '';
         for(let i = 0; i < n; i++){
-          $list.innerHTML += `<li><img class="topImg" src="${result[i].logo_url}"></li>`;
+          $list.innerHTML += `<div class="img">
+            <li><img class="topImg" src="${result[i].logo_url}"></li>
+            </div>`;
         }
       
       });
@@ -62,6 +64,24 @@
     }
     $top10.addEventListener("click", () => {
       callTop(10);
+    });
+    $top20.addEventListener("click", () => {
+      callTop(20);
+    });
+    $top50.addEventListener("click", () => {
+      callTop(50);
+    });
+    $top100.addEventListener("click", () => {
+      callTop(100);
+    });
+    $top200.addEventListener("click", () => {
+      callTop(200);
+    });
+    $top500.addEventListener("click", () => {
+      callTop(500);
+    });
+    $top1000.addEventListener("click", () => {
+      callTop(1000);
     });
   </script>
 </body>
