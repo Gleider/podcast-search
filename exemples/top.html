@@ -15,7 +15,7 @@
       <a class='menu' href="#">Home</a>
       <a class='menu' href="search.html">Search</a>
       <a class='menu' href="top.html">Top</a>
-      <a class='menu' href="listTags.html">List tags</a>
+      <a class='menu' href="tags.html">Tags</a>
       <a class='menu' href="tagName.html">Search tag</a>
   </nav>
   <div id="bd">
@@ -55,7 +55,7 @@
         $list.innerHTML = '';
         for(let i = 0; i < n; i++){
           $list.innerHTML += `<div class="img">
-            <li><img class="topImg" src="${result[i].logo_url}"></li>
+            <li><a href="${result[i].website}" target="_blank"><img class="topImg" src="${result[i].logo_url}"></a></li>
             </div>`;
         }
       

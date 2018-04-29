@@ -13,7 +13,7 @@
     <a class='menu' href="#">Home</a>
     <a class='menu' href="search.html">Search</a>
     <a class='menu' href="top.html">Top</a>
-    <a class='menu' href="listTags.html">List tags</a>
+    <a class='menu' href="tags.html">Tags</a>
     <a class='menu' href="tagName.html">Search tag</a>
   </nav>
   
@@ -48,10 +48,10 @@
       
       const podcast = podcastSearch.search(podcastName);
       podcast.then(result => {
-        const img = result[0].logo_url
+        const img = result[0].logo_url;
         console.log(result);
         $images.style.display = 'block';
-        const imag = `<img src='${img}' id='imgConf'/>`
+        const imag = `<img src='${img}' id='imgConf'/>`;
         $images.innerHTML = imag;
         
         $dsplay.style.display = 'block';
