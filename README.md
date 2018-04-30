@@ -40,6 +40,41 @@ import * as podcastSearch from 'podcast-search';
 var podcastSearch = require('podcast-search');
 ```
 
+### UMD in Browser
+
+```
+<!-- to import non-minified version -->
+<script src="podcast-search.umd.js"></script>
+
+<!-- to import minified version -->
+<script src="podcast-search.umd.min.js"></script>
+```
+
+## Methods
+
+Follow the methods that the library provides.
+
+### search(query)
+
+Search for podcasts with provided query.
+
+#### Arguments
+
+|  Argument   |  Type  |    Options     |
+| ----------- | ------ | -------------- |
+| query       | string | 'Search query' |
+
+#### Return
+A promise object containing a list os podcasts.
+
+#### Example
+```
+podcastSearch.search('nerdcast')
+  .then(data => {
+    //do what you want with the data
+  })
+```
+
 ## License
 
 The MIT License (MIT)
