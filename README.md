@@ -191,6 +191,30 @@ podcastSearch.tagName("news-politics", 5)
   });
   // print list of 5 title podcasts that have the tag news-politics.
 ```
+
+### info(url)
+
+Informations about podcast that was passed by parameter.
+
+#### Arguments
+
+|  Argument   |  Type  |    Options       |
+| ----------- | ------ | ---------------- |
+| url         | string | 'Url query'
+
+#### Return
+A promise object containing a podcast.
+The functions are the same that the search method.
+
+#### Example
+
+```
+podcastSearch.info("http://jovemnerd.ig.com.br/categoria/nerdcast/feed/rss/")
+  .then(data => {
+    console.log(data.title);
+  });
+  // print 'Nerdcast'.
+```
 ## License
 
 The MIT License (MIT)
