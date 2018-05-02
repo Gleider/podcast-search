@@ -104,6 +104,32 @@ podcastSearch.search('nerdcast')
   // print: 'O mundo vira piada no Jovem Nerd'.
 ```
 
+### top(qtd)
+
+List top podcasts.
+
+#### Arguments
+
+|  Argument   |  Type  |    Options       |
+| ----------- | ------ | ---------------- |
+| qtd         |  int   | 'Quantity query' |
+
+#### Return
+A promise object containing a list of top podcasts.
+The functions are the same that the search method.
+
+#### Example
+
+```
+podcastSearch.top(5)
+  .then(data => {
+    for(let i = 0; i < 5; i++){
+      console.log(data[i].title);
+    }
+  });
+  // print 5 top podcasts of the moment.
+  ```
+
 ## License
 
 The MIT License (MIT)
