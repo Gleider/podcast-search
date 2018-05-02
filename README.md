@@ -130,6 +130,67 @@ podcastSearch.top(5)
   // print 5 top podcasts of the moment.
   ```
 
+### listTags(qtd)
+
+List data of tags.
+
+#### Arguments
+
+|  Argument   |  Type  |    Options       |
+| ----------- | ------ | ---------------- |
+| qtd         |  int   | 'Quantity query' |
+
+#### Return
+A promise object containing a list of tags.
+
+##### data[i]
+
+###### .tag
+Name of tag.
+
+###### .title
+Title of the tag.
+
+###### .usage
+Quantity that was used.
+
+#### Example
+
+```
+podcastSearch.listTags(5)
+  .then(data => {
+    for(let i = 0; i < 5; i++){
+      console.log(data[i].tag);
+    }
+  });
+  // print list of 5 tags name.
+```
+### tagName(tag, qtd)
+
+A list of podcasts that represent the tag.
+
+#### Arguments
+
+|  Argument   |  Type  |    Options       |
+| ----------- | ------ | ---------------- |
+| tag         | string | 'Tag query'
+| qtd         |  int   | 'Quantity query' |
+
+#### Return
+A promise object containing a list of podcasts.
+The functions are the same that the search method.
+
+#### Example
+
+```
+podcastSearch.tagName("news-politics", 5)
+  .then(data => {
+    for(let i = 0; i < 5; i++){
+      console.log(data[i].title);
+    }
+  });
+  // print list of 5 title podcasts that have the tag news-politics.
+```
 ## License
 
 The MIT License (MIT)
