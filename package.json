@@ -66,5 +66,7 @@
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^6.0.0"
+  }
 }

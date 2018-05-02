@@ -65,14 +65,43 @@ Search for podcasts with provided query.
 | query       | string | 'Search query' |
 
 #### Return
-A promise object containing a list os podcasts.
+A promise object containing a list of podcasts data.
+##### data[i]
+
+###### .title
+A title of podcast.
+
+###### .url
+URL to feed of podcast.
+
+###### .website
+Website of podcast.
+
+###### .description
+A description about the podcast.
+
+###### .logo_url
+A image that represents the podcast.
+
+###### .mygpo_link
+A link to mygpo page podcast
+
+###### .scaled_logo_url
+A link to mygpo scaled imagem that represents the podcast.
+
+###### .subscribers:
+Quantity of users that subscribed the podcast.
+
+###### .subscribers_last_week
+Quantity of users that subscribed the podcast in last week.
 
 #### Example
 ```
 podcastSearch.search('nerdcast')
   .then(data => {
-    //do what you want with the data
-  })
+    console.log(data[0].description);
+  }); 
+  // print: 'O mundo vira piada no Jovem Nerd'.
 ```
 
 ## License
