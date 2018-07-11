@@ -1,6 +1,6 @@
 {
   "name": "podcast-search",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "API to search podcasts",
   "main": "lib/search.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "url": "git+https://github.com/Gleider/podcast-search.git"
   },
   "files": [
-    "dist",
     "lib"
   ],
   "nyc": {
